@@ -3,7 +3,7 @@ name: Build and Push Docker Images
 on:
   push:
     branches:
-      - main  # You can change this to the branch you want to trigger the workflow on
+      - feauture-branch1   # You can change this to the branch you want to trigger the workflow on
 
 jobs:
   build-and-push:
