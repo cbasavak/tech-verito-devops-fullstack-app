@@ -22,11 +22,11 @@ jobs:
     - name: Build and Push Docker Image for app1
       working-directory: ./backend
       run: |
-        docker build -t cbasavak/app1:$GITHUB_SHA .
-        docker push cbasavak/app1:$GITHUB_SHA
+        docker build -t cbasavak/backend-image:$GITHUB_SHA .
+        docker push cbasavak/backend-image:$GITHUB_SHA
 
     - name: Build and Push Docker Image for app2
       working-directory: ./frontend
       run: |
-        docker build -t cbasavak/app2:$GITHUB_SHA .
-        docker push cbasavak/app2:$GITHUB_SHA
+        docker build -t cbasavak/frontend-image:$GITHUB_SHA .
+        docker push cbasavak/frontend-image:$GITHUB_SHA
