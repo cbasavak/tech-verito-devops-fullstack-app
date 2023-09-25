@@ -19,3 +19,6 @@ RUN go build -o main .
 
 # Expose port 8080 for the backend application
 EXPOSE 8080
+
+# Define the command to start the Go backend
+CMD ["./main"]
