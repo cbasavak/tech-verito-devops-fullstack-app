@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  go_db:
+    container_name: go_db
+    image: postgres:12
+    environment:
+      DB_HOST: "18.233.62.23"
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB: postgres
+      DB_PORT: 5432
+    ports:
+    - "5432:5432"
+    volumes:
+    - pgdata:/var/lib/postgresql/data
+  frontend:
+    container_name: reactJS-app
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile_front
+    ports:
+    - "3000:3000" 
+    depends_on:
+    - backend
+  backend:
+    container_name: go-app
+    build:
+      context: ./backend
+      dockerfile: Dockerfile_back
+    environment:
+      DATABASE_URL: "postgres://postgres:postgres@18.233.62.23:5432/postgres?sslmode=disable"
+      DB_HOST: "18.233.62.23"
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB: postgres
+      DB_PORT: 5432
+    ports:
+    - "8080:8080"
+    depends_on:
+    - go_db
+volumes:
+  pgdata: {}
