@@ -35,7 +35,7 @@ func main() {
 }
 func initializeDatabaseConnection() *gorm.DB {
         db, err := gorm.Open(postgres.New(postgres.Config{
-                DSN: "host=go_db user=postgres password=postgres dbname=postgres port=5432 sslmode=disable",
+                DSN: "host=18.210.14.200 user=postgres password=postgres dbname=postgres port=5432 sslmode=disable",
         }), &gorm.Config{})
         if err != nil {
                 log.Fatalln(fmt.Sprintf("error connecting with database %s", err.Error()))
