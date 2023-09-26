@@ -6,7 +6,7 @@ services:
     environment:
       DB_HOST: "18.210.14.200"
       DB_USER: postgres
-      DB_PASSWORD: postgres
+      POSTGRES_PASSWORD: postgres
       DB: postgres
       DB_PORT: 5432
     ports:
@@ -31,7 +31,7 @@ services:
       DATABASE_URL: "postgres://postgres:postgres@18.210.14.200:5432/postgres?sslmode=disable"
       DB_HOST: "18.210.14.200"
       DB_USER: postgres
-      DB_PASSWORD: postgres
+      POSTGRES_PASSWORD: postgres
       DB: postgres
       DB_PORT: 5432
     ports:
