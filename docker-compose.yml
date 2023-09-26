@@ -4,7 +4,7 @@ services:
     container_name: go_db
     image: postgres:12
     environment:
-      DB_HOST: "go_db"
+      DB_HOST: "18.210.14.200"
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB: postgres
@@ -28,8 +28,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile_back
     environment:
-      DATABASE_URL: "postgres://postgres:postgres@go_db:5432/postgres?sslmode=disable"
-      DB_HOST: "go_db"
+      DATABASE_URL: "postgres://postgres:postgres@18.210.14.200:5432/postgres?sslmode=disable"
+      DB_HOST: "18.210.14.200"
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB: postgres
